@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>First Try</title>
+    <style>
+        .look{
+           height: 400px;
+            width:300px;
+            background-color:rgb(5, 49, 27) ;
+           margin-left: 500px;
+
+
+        }
+        .button1{
+            width: 60px;
+            height: 70%;
+            border-width: 2px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+        }
+        .button1:hover {
+             background-color: #2c2a2a;
+             color: white;
+        }
+        .result{
+            width: 250px;
+            height:80%;
+            margin-left: 10px;
+            font-weight: 600;
+            text-align:right;
+
+        }
+    </style>
+</head>
+
+<body style="background-color:rgb(23, 24, 24);">
+    <h1 style="color: rgb(216, 158, 81); text-align: center;">SIMPLE CALCULATOR</h1>
+    <br>
+    <table class="look">
+        
+        <tr><td colspan="4"><input class="result" type="button" id="res" value="" ></td>
+            <td> <input class="button1" type="button" name="CE" value="CE"  onclick="clear1()"></td>
+        </tr>
+
+        <tr>
+            <td> <input class="button1" type="button" name="seven" value="7"  onclick="result(7)"></td>
+            <td> <input class="button1" type="button" name="eight" value="8"  onclick="result(8)"></td>
+            <td> <input class="button1" type="button" name="nine" value="9"  onclick="result(9)"></td>
+            <td> <input class="button1" type="button" name="plus" value="+"  onclick="result(11)"></td>
+            <td> <input class="button1" type="button" name="minus" value="-"  onclick="result(12)"></td>
+            </tr>
+        <tr>
+            <td> <input class="button1" type="button" name="four" value="4"  onclick="result(4)"></td>
+            <td> <input class="button1" type="button" name="five" value="5"  onclick="result(5)"></td>
+            <td> <input class="button1" type="button" name="six" value="6"  onclick="result(6)"></td>
+            <td> <input class="button1" type="button" name="mul" value="*"  onclick="result(13)"></td>
+            <td> <input class="button1" type="button" name="div" value="/"  onclick="result(14)"></td>
+           
+            
+        </tr>
+        <tr>
+            <td> <input class="button1" type="button" name="one" value="1" onclick="result(1)" ></td>
+            <td> <input class="button1" type="button" name="two" value="2" onclick="result(2)"></td>
+            <td> <input class="button1" type="button" name="three" value="3"onclick="result(3)"></td>
+            <td> <input class="button1" type="button" name="zero" value="0" onclick="result(0)"></td>
+            <td> <input class="button1" type="button" name="equals" value="="  onclick="cal()" ></td>
+            
+            
+        </tr>
+
+        </td>
+    </table>
+   
+</body>
+<script>
+        function result(a){
+            if(a==11)
+            document.getElementById("res").value+="+";
+            else if(a==12)
+            document.getElementById("res").value+="-";
+            else if(a==13)
+            document.getElementById("res").value+="*";
+            else if(a==14)
+            document.getElementById("res").value+="/";
+            else
+            document.getElementById("res").value+=a;
+            
+        }
+        function cal(){
+            let str= document.getElementById("res").value;
+            document.getElementById("res").value=eval(str);
+
+        }
+        function clear1(){
+            document.getElementById("res").value="";
+        }
+       
+</script>
+</html>
